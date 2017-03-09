@@ -1517,8 +1517,7 @@ namespace bgfx
 								const Varying& var = varyingIt->second;
 								const char* name = var.m_name.c_str();
 
-								if (0 == bx::strCmp(name, "a_", 2)
-								||  0 == bx::strCmp(name, "i_", 2) )
+								if (shaderType == 'v')
 								{
 									preprocessor.writef("attribute %s %s %s %s;\n"
 											, var.m_precision.c_str()
