@@ -1212,7 +1212,8 @@ namespace bgfx { namespace gl
 	struct ShaderGL
 	{
 		ShaderGL()
-			: m_id(0)
+			: m_varyings(nullptr)
+			, m_id(0)
 			, m_type(0)
 			, m_hash(0)
 		{
@@ -1221,6 +1222,7 @@ namespace bgfx { namespace gl
 		void create(Memory* _mem);
 		void destroy();
 
+		const char** m_varyings;
 		GLuint m_id;
 		GLenum m_type;
 		uint32_t m_hash;
@@ -1266,7 +1268,7 @@ namespace bgfx { namespace gl
 
 		void create(const ShaderGL& _vsh, const ShaderGL& _fsh);
 		void destroy();
-		void init();
+		void init(const char** varyings);
 		void bindInstanceData(uint32_t _stride, uint32_t _baseVertex = 0) const;
 
 		void bindAttributesBegin()
