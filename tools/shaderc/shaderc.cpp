@@ -717,7 +717,7 @@ namespace bgfx
 		return base;
 	}
 
-	void writeVaryings(bx::CrtFileWriter* writer, const VaryingMap& varyingMap)
+	void writeVaryings(bx::FileWriter* writer, const VaryingMap& varyingMap)
 	{
 		std::string semantics[Attrib::Count] {};
 		for(const std::pair<const std::string, Varying>& v : varyingMap)
